@@ -55,6 +55,12 @@ dependencies {
     implementation("com.google.firebase:firebase-bom:32.7.1")
     implementation("com.google.firebase:firebase-auth:22.3.1")
 
+    implementation("com.xsolla.android:payments:latest.release")
+    implementation("com.xsolla.android:store:latest.release")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.7.0")

@@ -1,6 +1,7 @@
 package com.xsolla.androidsample
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -11,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.xsolla.android.store.XStore
 
 class MainActivity : ComponentActivity() {
     private lateinit var auth: FirebaseAuth
@@ -67,7 +69,11 @@ class MainActivity : ComponentActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if(user == null) return
-        showNotificationMessage("Congratulations! Successful registration. Firebase uid: ${user?.uid}")
+
+        val intent = Intent(this, StoreActivity::class.java)
+        intent.putExtra("uid", user.uid)
+        intent.putExtra("email", user.email)
+        startActivity(intent)
     }
 
     private fun showNotificationMessage(message: String) {
