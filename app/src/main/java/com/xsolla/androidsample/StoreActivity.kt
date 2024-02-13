@@ -20,7 +20,7 @@ class StoreActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_store)
 
-        XStore.init(254795)
+        XStore.init(254795) //  replace with your project id from xsolla publisher account
 
         initUI()
         loadVirtualItems()

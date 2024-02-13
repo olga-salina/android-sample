@@ -1,6 +1,5 @@
 package com.xsolla.androidsample.adapter
 
-import android.R.attr.duration
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
@@ -63,7 +62,9 @@ class BuyItemAdapter(private val parentActivity: StoreActivity, private val item
             put("returnUrl", "app://xpayment." + parentActivity.packageName)
         })
 
-        val connection = URL("https://0629-46-242-14-210.ngrok-free.app/fir-androidtestproject-f0704/us-central1/getXsollaPaymentToken").openConnection() as HttpURLConnection
+        val firebaseProjectId = "fir-androidtestproject-f0704" //  replace with your own firebase project id
+        val hostName = "https://9e46-46-242-14-210.ngrok-free.app" //  replace with your own host name
+        val connection = URL("$hostName/$firebaseProjectId/us-central1/getXsollaPaymentToken").openConnection() as HttpURLConnection
         connection.requestMethod = "POST"
         connection.setRequestProperty("Content-Type", "application/json")
         connection.doOutput = true
